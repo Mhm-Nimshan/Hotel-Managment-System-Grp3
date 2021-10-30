@@ -39,4 +39,17 @@ public class CustomerController {
         return "redirect:/read-customer";
     }
 
+    @GetMapping("/update-customer/{id}")
+    public String showUpdateCustomerPage(@PathVariable int id, Model model) {
+        model.addAttribute("id", id);
+        model.addAttribute("command", customerService.findById(id).orElse(null));
+        return "updatecustomer";
+    }
+
+    @PostMapping("/update-customer/{id}")
+    public String updateCustomer(@PathVariable int id, @ModelAttribute("customer") Customer customer) {
+        customerService.updateCustomer(id, customer);
+        return "redirect:/read-customer";
+    }
+
 }
