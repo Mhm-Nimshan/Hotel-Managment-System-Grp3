@@ -15,6 +15,12 @@ public class CustomerController {
     @Autowired
     private CustomerService customerService;
 
+    @GetMapping("/read-customer")
+    public String showReadCustomerPage(Model model) {
+        model.addAttribute("customers", customerService.findAll());
+        return "readcustomer";
+    }
+
     @GetMapping("/create-customer")
     public String showCreateCustomerPage(Model model) {
         model.addAttribute("command", new Customer());
