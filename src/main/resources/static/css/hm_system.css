@@ -1,0 +1,313 @@
+@charset "utf-8";
+/* CSS Document */
+
+/******************************/
+/*******common css*************/
+
+
+/******* fonts *********/
+@import url('../fonts/stylesheet_fonts.css');
+/******* fonts *********/
+
+
+body{
+    font-family: 'Century Gothic' !important;
+}
+
+
+
+.gray{
+  -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+  filter: grayscale(100%);
+  
+        
+   
+}
+
+.zoom{
+
+   transform: scale(1.07);
+}
+
+
+.margin_auto{
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.no_padding{
+    padding-right: 0px;
+    padding-left: 0px;
+}
+
+.no_padd_left{
+    padding-left: 0px;
+}
+
+p{
+    font-size: 16px;
+    line-height: 28px;
+}
+
+a{
+    text-decoration: none !important;
+}
+
+/*******common css*************/
+/******************************/
+
+
+
+
+/*****************************/
+/*********header**************/
+
+.header_bar{
+    background-color: #032a47;
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
+.navbar-brand {
+    float: left;
+    height: 70px;
+    padding: 5px 15px;
+    font-size: 18px;
+    line-height: 20px;
+}
+
+.navbar-nav>li>a {
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+
+.navbar-fixed-top {
+    top: 0;
+    border-width: 0 0 0px;
+}
+
+.navbar-default {
+    background-color: #ffffff;
+    border-color: #ffffff;
+}
+
+/*****************************/
+/*********header**************/
+
+
+
+
+
+/*****************************/
+/*********menu**************/
+
+.logo{
+    width: 120px;
+}
+
+/*.navbar-fixed-bottom, .navbar-fixed-top {*/
+    /*position: absolute;*/
+    /*right: 0;*/
+    /*left: 0;*/
+    /*z-index: 1030;*/
+/*}*/
+
+.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover {
+    color: #032a47;
+    font-weight: 900;
+    background-color: #ffffff;
+}
+
+
+/*****************************/
+/*********menu**************/
+
+
+
+
+
+/*****************************/
+/*********body**************/
+
+.inner_carousel {
+    height: 350px;
+}
+
+.carousel-caption{
+    width: auto;
+    background-color: rgba(225,225,225,0.7);
+    right: 10%;
+    left: 65%;
+    height: 100vh;
+    padding-bottom: 0px;
+    bottom: 0px;
+    padding: 20px 30px;
+    text-align: left;
+    text-shadow: none;
+}
+
+.carousel-caption p{
+    padding-top: 10px;
+    font-size: 12px;
+}
+
+.heading{
+    font-size: 20px;
+    font-weight: 900;
+    color: #000000;
+    text-transform: uppercase;
+}
+.content_box{
+    padding: 20px;
+    -webkit-box-shadow: 0px 0px 29px 6px rgba(0,0,0,0.08);
+    -moz-box-shadow: 0px 0px 29px 6px rgba(0,0,0,0.08);
+    box-shadow: 0px 0px 29px 6px rgba(0,0,0,0.08);
+}
+
+.custom_btn {
+    font-weight: 900;
+    width: 100%;
+    padding: 5px 15px;
+    height: 40px;
+    background-color: #54b948;
+    border: 1px solid #54b948;
+    color: #ffffff;
+    border-radius: 5px;
+    -webkit-transition: all 500ms ease;
+    -moz-transition: all 500ms ease;
+    -ms-transition: all 500ms ease;
+    -o-transition: all 500ms ease;
+    transition: all 500ms ease;
+}
+
+.custom_btn:hover {
+    background-color: #322c40;
+    border: 1px solid #322c40;
+    color: #ffffff;
+}
+
+.form-control {
+    display: block;
+    width: 100%;
+    height: 45px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #000000;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 1px rgb(0 0 0 / 8%);
+    box-shadow: inset 0 1px 1px rgb(0 0 0 / 8%);
+    -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+    -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+}
+
+.table > thead > tr > th,
+.table > tbody > tr > th,
+.table > tfoot > tr > th,
+.table > thead > tr > td,
+.table > tbody > tr > td,
+.table > tfoot > tr > td {
+  padding: 8px;
+  line-height: 1.42857143;
+  vertical-align: middle;
+  border-top: 1px solid #54b948;
+}
+
+/*****************************/
+/*********body**************/
+
+
+
+
+
+/*****************************/
+/*********footer**************/
+
+.footer_row{
+    background-color: #312c40;
+}
+
+
+/*****************************/
+/*********footer**************/
+
+
+/**********=========================================********************/
+/**********===============SCROLL TOP=================********************/
+/**********=========================================********************/
+
+.scroll-top-wrapper {
+    position: fixed;
+    opacity: 0;
+    visibility: hidden;
+    overflow: hidden;
+    text-align: center;
+    z-index: 99999999;
+    background-color: #ffffff;
+    color: #2a3476;
+    width: 32px;
+    height: 50px;
+    line-height: 48px;
+    right: 30px;
+    bottom: 30px;
+    padding-top: 2px;
+    border-radius: 0px;
+    border: 1px solid #2a3476;
+    /*border-top-left-radius: 10px;*/
+    /*border-top-right-radius: 10px;*/
+    /*border-bottom-right-radius: 10px;*/
+    /*border-bottom-left-radius: 10px;*/
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -ms-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+    animation: bounce_1 1s infinite alternate;
+    -webkit-animation: bounce_1 1s infinite alternate;
+}
+
+@keyframes bounce_1 {
+    from {
+        transform: translateY(0px);
+    }
+    to {
+        transform: translateY(-15px);
+    }
+}
+@-webkit-keyframes bounce_1 {
+    from {
+        transform: translateY(0px);
+    }
+    to {
+        transform: translateY(-15px);
+    }
+}
+
+.scroll-top-wrapper:hover {
+    background-color: #fbad18;
+    color: #ffffff;
+    border: 1px solid #fbad18;
+}
+.scroll-top-wrapper.show {
+    visibility:visible;
+    cursor:pointer;
+    opacity: 1.0;
+}
+.scroll-top-wrapper i.fa {
+    line-height: inherit;
+}
+
+/**********=========================================********************/
+/**********===============SCROLL TOP=================********************/
+/**********=========================================********************/
+
+/*========================================================================*/
+/*========================================================================*/
+/*=====================Solution by TEKGEEKS (pvt) LTD=====================*/
+/*============DESIGN & CSS DEVELOPMENT - DUMIDU WIMALARATHNA==============*/
+/*========================================================================*/
+/*========================================================================*/

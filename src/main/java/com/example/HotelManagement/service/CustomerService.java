@@ -1,8 +1,9 @@
 package com.example.HotelManagement.service;
 
 import com.example.HotelManagement.model.Customer;
+import com.example.HotelManagement.model.User;
 import com.example.HotelManagement.repository.CustomerRepository;
-
+import com.example.HotelManagement.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,30 +14,49 @@ import java.util.Optional;
 public class CustomerService {
 
     @Autowired
-    private CustomerRepository customerRepository;
+    private UserRepository userRepository;
 
-    public List<Customer> findAll() {
-        return customerRepository.findAll();
+    public List<User> findAllUsers() {
+        return userRepository.findAll();
     }
 
-    public Optional<Customer> findById(int id) {
-        return customerRepository.findById(id);
+    public Optional<User> findUserById(int id) {
+        return userRepository.findById(id);
+    }
+    public List<User> findAll() {
+        return userRepository.findAll();
     }
 
-    public Customer saveCustomer(Customer customer) {
-        return customerRepository.save(customer);
+    public Optional<User> findById(int id) {
+        return userRepository.findById(id);
     }
 
-    public Customer updateCustomer(int id, Customer customer) {
-        Customer updatedCustomer = customerRepository.findById(id).orElse(null);
-        updatedCustomer.setName(customer.getName());
-        updatedCustomer.setEmail(customer.getEmail());
-        updatedCustomer.setPassword(customer.getPassword());
-        return customerRepository.save(updatedCustomer);
+    public User saveCustomer(User user) {
+//        updatedCustomer.setRole("ROLE_CUSTOMER");
+        user.setRole("ROLE_CUSTOMER");
+        return userRepository.save(user);
+    }
+
+
+    public User updateCustomer(int id, User user) {
+        User updatedCustomer = userRepository.findById(id).orElse(null);
+        updatedCustomer.setName(user.getName());
+//        updatedCustomer.setName("Harsha");
+        updatedCustomer.setRole("ROLE_CUSTOMER");
+        updatedCustomer.setEmail(user.getEmail());
+        updatedCustomer.setPassword(user.getPassword());
+
+//        customer.getEmployee().getPhone();
+
+        return userRepository.save(updatedCustomer);
     }
 
     public void deleteById(int id) {
-        customerRepository.deleteById(id);
+        userRepository.deleteById(id);
+    }
+
+    public User findByEmailAndPassword(String email, String password){
+        return userRepository.findByEmailAndPassword(email, password).orElse(null);
     }
 
 }
