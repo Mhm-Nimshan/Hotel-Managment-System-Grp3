@@ -8,7 +8,6 @@ import javax.persistence.*;
 @Entity
 @Getter
 @Setter
-
 public class Customer {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -23,4 +22,5 @@ public class Customer {
 
     @Column
     private String password;
+
 }

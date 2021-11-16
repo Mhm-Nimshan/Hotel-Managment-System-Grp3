@@ -1,6 +1,6 @@
 package com.example.HotelManagement.controller;
 
-import com.example.HotelManagement.model.Customer;
+import com.example.HotelManagement.model.User;
 import com.example.HotelManagement.service.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -18,19 +18,25 @@ public class CustomerController {
     @GetMapping("/read-customer")
     public String showReadCustomerPage(Model model) {
         model.addAttribute("customers", customerService.findAll());
-        return "readcustomer";
+        return "read_customer";
+    }
+    //Customer view for admin users
+    @GetMapping("/admin-read-customer")
+    public String showReadAdminCustomerPage(Model model) {
+        model.addAttribute("customers", customerService.findAll());
+        return "admin_read_customer";
     }
 
     @GetMapping("/create-customer")
     public String showCreateCustomerPage(Model model) {
-        model.addAttribute("command", new Customer());
-        return "createcustomer";
+        model.addAttribute("command", new User());
+        return "create_customer";
     }
 
     @PostMapping("/create-customer")
-    public String createCustomer(@ModelAttribute("customer") Customer customer) {
-        customerService.saveCustomer(customer);
-        return "redirect:/read-customer";
+    public String createCustomer(@ModelAttribute("customer") User user) {
+        customerService.saveCustomer(user);
+        return "redirect:/login";
     }
 
     @GetMapping("/delete-customer/{id}")
@@ -42,13 +48,14 @@ public class CustomerController {
     @GetMapping("/update-customer/{id}")
     public String showUpdateCustomerPage(@PathVariable int id, Model model) {
         model.addAttribute("id", id);
-        model.addAttribute("command", customerService.findById(id).orElse(null));
-        return "updatecustomer";
+        model.addAttribute("command", customerService.findUserById(id).orElse(null));
+        return "update_customer";
     }
 
+
     @PostMapping("/update-customer/{id}")
-    public String updateCustomer(@PathVariable int id, @ModelAttribute("customer") Customer customer) {
-        customerService.updateCustomer(id, customer);
+    public String updateCustomer(@PathVariable int id, @ModelAttribute("customer") User user) {
+        customerService.updateCustomer(id, user);
         return "redirect:/read-customer";
     }
 
