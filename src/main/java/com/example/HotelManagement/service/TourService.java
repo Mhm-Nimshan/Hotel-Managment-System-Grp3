@@ -2,7 +2,7 @@ package com.example.HotelManagement.service;
 
 import com.example.HotelManagement.model.Tour;
 import com.example.HotelManagement.model.User;
-//import com.example.HotelManagement.repository.HotelRepository;
+import com.example.HotelManagement.repository.HotelRepository;
 import com.example.HotelManagement.repository.TourRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
