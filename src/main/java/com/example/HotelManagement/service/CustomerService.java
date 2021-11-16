@@ -45,6 +45,7 @@ public class CustomerService {
         updatedCustomer.setRole("ROLE_CUSTOMER");
         updatedCustomer.setEmail(user.getEmail());
         updatedCustomer.setPassword(user.getPassword());
+        updatedCustomer.setPhone(user.getPhone());
 
 //        customer.getEmployee().getPhone();
 
