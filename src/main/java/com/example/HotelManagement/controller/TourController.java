@@ -1,7 +1,7 @@
 package com.example.HotelManagement.controller;
 
 import com.example.HotelManagement.model.Tour;
-//import com.example.HotelManagement.service.HotelService;
+import com.example.HotelManagement.service.HotelService;
 import com.example.HotelManagement.service.TourService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -16,8 +16,8 @@ public class TourController {
     @Autowired
     private TourService tourService;
 
-//    @Autowired
-//    private HotelService hotelService;
+@Autowired
+private HotelService hotelService;
 
     @GetMapping("/read-tour")
     public String showAdminReadTourPage(Model model){
@@ -43,7 +43,7 @@ public class TourController {
     public String showCreateTourPage(Model model){
         model.addAttribute("command", new Tour());
 
-//        model.addAttribute("hotels", hotelService.findAll());
+        model.addAttribute("hotels", hotelService.findAll());
 
         return "admin_create_tour";
     }
@@ -64,7 +64,7 @@ public class TourController {
         model.addAttribute("id", id);
         model.addAttribute("command", tourService.findById(id).orElse(null));
         //***
-//        model.addAttribute("hotels", hotelService.findAll());
+        model.addAttribute("hotels", hotelService.findAll());
         return "admin_update_tour";
     }
 

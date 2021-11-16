@@ -33,9 +33,9 @@ public class Tour {
     private String feedback;
 
 
-//    @ManyToOne
-//    @JoinColumn(name = "hotel_id")
-//    private Hotel hotel;
+    @ManyToOne
+    @JoinColumn(name = "hotel_id")
+    private Hotel hotel;
 
 
 
