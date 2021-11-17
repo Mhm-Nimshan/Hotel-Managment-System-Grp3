@@ -97,9 +97,14 @@
               </div>
 
             <div class="form-group">
-              <label>User Role:</label>
-              <form:input path="role" class="form-control"/>
-            </div>
+                  <label>User Role:</label>
+                  <select name="role" class="form-control">
+                  <option value="Admin">Admin</option>
+                  <option value="Tour Organizer">Tour Organizer</option>
+                  <option value="Receptionist">Receptionist</option>
+                  <option value="Customer">Customer</option>
+                  </select>
+             </div>
 
             <div class="form-group">
               <label>Password:</label>

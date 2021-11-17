@@ -33,7 +33,7 @@ public class CustomerService {
 
     public User saveCustomer(User user) {
 //        updatedCustomer.setRole("ROLE_CUSTOMER");
-        user.setRole("ROLE_CUSTOMER");
+        user.setRole("Customer");
         return userRepository.save(user);
     }
 
@@ -42,7 +42,7 @@ public class CustomerService {
         User updatedCustomer = userRepository.findById(id).orElse(null);
         updatedCustomer.setName(user.getName());
 //        updatedCustomer.setName("Harsha");
-        updatedCustomer.setRole("ROLE_CUSTOMER");
+        updatedCustomer.setRole("Customer");
         updatedCustomer.setEmail(user.getEmail());
         updatedCustomer.setPassword(user.getPassword());
         updatedCustomer.setPhone(user.getPhone());
