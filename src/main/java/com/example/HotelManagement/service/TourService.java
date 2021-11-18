@@ -43,12 +43,6 @@ public class TourService {
         tourRepository.deleteById(id);
     }
 
-//    public Tour updateTour(int id, Tour tour) {
-//        Tour bookedTour = tourRepository.findById(id).orElse(null);
-//        tourRepository.setStatus("Inactive");
-//
-//        return tourRepository.save(bookedTour);
-//    }
 
     //Update feedback
     public Tour updateMyTour(int id, Tour tour){
@@ -58,13 +52,6 @@ public class TourService {
         return tourRepository.save(tour);
     }
 
-//    public Tour booking(int id, Tour tour){
-////        System.out.println(tour);
-//        tour.setStatus("Inactive");
-////        updatedTour.setHotel_address(tour.getHotel_address());
-////        updatedTour.setHotline(tour.getHotline());
-//        return tourRepository.save(tour);
-//    }
     public Tour booking(int id, Tour tour) {
         Tour bookedTour = tourRepository.findById(id).orElse(null);
         bookedTour.setStatus("Unavailable");

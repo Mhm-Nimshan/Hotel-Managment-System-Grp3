@@ -28,13 +28,11 @@
                 <li><a href="/read-employee">EMPLOYEES</a></li>
                 <li><a href="/read-packages">PACKAGES</a></li>
                 <li><a href="/read-hotel">HOTELS</a></li>
-                 <li><a href="/read-feedback">FEEDBACKS</a></li>
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" style="padding-top: 20px; padding-bottom: 20px;"><img src="../images/user.png" alt="" style="width: 30px;">
                     <span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                      <li><a href="/edit-profile">PROFILE</a></li>
-                      <li><a href="/home">SIGN OUT</a></li>
+                      <li><a href="/login">SIGN OUT</a></li>
                     </ul>
                   </li>
             </ul>
