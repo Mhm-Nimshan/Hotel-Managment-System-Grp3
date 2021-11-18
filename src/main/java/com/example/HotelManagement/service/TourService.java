@@ -49,4 +49,26 @@ public class TourService {
 //
 //        return tourRepository.save(bookedTour);
 //    }
+
+    //Update feedback
+    public Tour updateMyTour(int id, Tour tour){
+
+        System.out.println(tour);
+
+        return tourRepository.save(tour);
+    }
+
+//    public Tour booking(int id, Tour tour){
+////        System.out.println(tour);
+//        tour.setStatus("Inactive");
+////        updatedTour.setHotel_address(tour.getHotel_address());
+////        updatedTour.setHotline(tour.getHotline());
+//        return tourRepository.save(tour);
+//    }
+    public Tour booking(int id, Tour tour) {
+        Tour bookedTour = tourRepository.findById(id).orElse(null);
+        bookedTour.setStatus("Unavailable");
+
+        return tourRepository.save(bookedTour);
+    }
 }

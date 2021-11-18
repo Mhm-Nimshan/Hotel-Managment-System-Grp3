@@ -2,7 +2,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
 <h1>Update Package</h1>
-<form:form method="post" action="/my-tour/{id}">
+<form:form method="post" action="/my-tour/${id}">
     <table>
         <tr>
             <td>Package Name: </td>
@@ -28,7 +28,12 @@
 
         <tr>
             <td></td>
-            <td><input type="submit" value="Update"/></td>
+            <td><input type="submit" value="Give Feedback"/></td>
+
         </tr>
     </table>
+</form:form>
+
+<form:form method="post" action="/book-tour/${id}">
+    <td><input type="submit" value="Book"/></td>
 </form:form>

@@ -4,6 +4,7 @@ import com.example.HotelManagement.model.Tour;
 import com.example.HotelManagement.service.HotelService;
 import com.example.HotelManagement.service.TourService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -11,13 +12,14 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
+@ComponentScan
 @Controller
 public class TourController {
     @Autowired
     private TourService tourService;
 
-@Autowired
-private HotelService hotelService;
+    @Autowired
+    private HotelService hotelService;
 
     @GetMapping("/read-tour")
     public String showAdminReadTourPage(Model model){
@@ -26,11 +28,11 @@ private HotelService hotelService;
         return "admin_read_tour";
     }
 
-//    @GetMapping("/tour")
-//    public String showReadTourPage(Model model){
-//        model.addAttribute("tours", tourService.findAll());
-//        return "read_tour";
-//    }
+    @GetMapping("/tour")
+    public String showReadTourPage(Model model){
+        model.addAttribute("tours", tourService.findAll());
+        return "read_tour";
+    }
 
     //Customer home page tour details
     @GetMapping("/home")
@@ -69,13 +71,13 @@ private HotelService hotelService;
     }
 
     // Find tour by ID(new)
-//    @GetMapping("/my-tour/{id}")
-//    public String showReadTourPage(@PathVariable int id, Model model){
-//        model.addAttribute("id", id);
-//        model.addAttribute("command", tourService.findById(id).orElse(null));
-//
-//        return "read_tour";
-//    }
+    @GetMapping("/my-tour/{id}")
+    public String showReadTourPage(@PathVariable int id, Model model){
+        model.addAttribute("id", id);
+        model.addAttribute("command", tourService.findById(id).orElse(null));
+
+        return "read_tour";
+    }
 
     @PostMapping("/update-tour/{id}")
     public String updateTour(@PathVariable int id, @ModelAttribute("tour")Tour tour){
@@ -84,11 +86,21 @@ private HotelService hotelService;
     }
 
     // Update feedback
-//    @PostMapping("/my-tour/{id}")
-//    public String updateMyTour(@PathVariable int id, @ModelAttribute("tour") Tour tour){
-//        tourService.updateTour(id, tour);
-//        return  "redirect:/home";
-//    }
+    @PostMapping("/my-tour/{id}")
+    public String updateMyTour(@PathVariable int id, @ModelAttribute("tour") Tour tour){
+        tourService.updateMyTour(id, tour);
+        return  "redirect:/home";
+    }
+
+    // Tour Booking
+//    @GetMapping("/book-tour/{id}")
+    @PostMapping("/book-tour/{id}")
+    public String booking(@PathVariable int id, @ModelAttribute("tour") Tour tour){
+        tourService.booking(id, tour);
+        return "redirect:/home";
+    }
+
+
 
 
 

@@ -127,6 +127,10 @@
                    ${tour.pkg_description}
               </p>
 
+              <p>
+                   ${tour.status}
+              </p>
+
                 <br>
 
                 <a href="/my-tour/${tour.id}"><button class="btn btn-default custom_btn" data-aos="fade-up" style="width: auto;">VIEW PACKAGE DETAILS</button></a>
