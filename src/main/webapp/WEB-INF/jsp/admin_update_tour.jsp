@@ -91,8 +91,8 @@
                <div class="form-group">
                   <label>Package Status: </label>
                   <select name="status" class="form-control" >
-                    <option value="Active">Active</option>
-                    <option value="Inactive">Inactive</option>
+                    <option value="Available">Available</option>
+                    <option value="Unavailable">Unavailable</option>
                   </select>
               </div>
 
