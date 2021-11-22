@@ -33,9 +33,6 @@ public class TourService {
     public Tour updateTour(int id, Tour tour){
 
         System.out.println(tour);
-//        updatedTour.setHotel_name(tour.getHotel_name());
-//        updatedTour.setHotel_address(tour.getHotel_address());
-//        updatedTour.setHotline(tour.getHotline());
         return tourRepository.save(tour);
     }
 

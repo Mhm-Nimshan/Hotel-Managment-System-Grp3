@@ -39,14 +39,13 @@ public class MainController {
             return "redirect:/login";
         }
 
-        if(password.equals(userObj.getPassword()) && email.equals(userObj.getEmail()) && userObj.getRole() == "ROLE_CUSTOMER") {
+        if(password.equals(userObj.getPassword()) && email.equals(userObj.getEmail()) && userObj.getRole() == "Customer") {
             return "redirect:/home";
         }else if (password.equals(userObj.getPassword()) && email.equals(userObj.getEmail())){
             return "redirect:/read-employee";
         }else{
             return "redirect:/login";
         }
-
 
     }
 

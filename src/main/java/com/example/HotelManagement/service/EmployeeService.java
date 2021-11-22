@@ -13,8 +13,6 @@ import java.util.Optional;
 @Service
 public class EmployeeService {
 
-    //    @Autowired
-//    private EmployeeRepository employeeRepository;
     @Autowired
     private UserRepository userRepository;
 
