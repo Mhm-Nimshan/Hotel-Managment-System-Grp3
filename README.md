@@ -1,4 +1,4 @@
-# Home Nature Tour Management System
+# Tour Management System
 
 This is a web-based tour management system developed by using Java Spring Boot and Bootstrap.
 
@@ -21,6 +21,10 @@ This is a web-based tour management system developed by using Java Spring Boot a
 5) Run following query in H2 database console to login to the system.
 ```
 INSERT INTO USER VALUES(1, 'address', 'admin@gmail.com', 'Admin', '123', 123456789, 'Admin');
+```
+h2 console link
+```
+http://localhost:8080/h2-console/login.do
 ```
 6) Use following email and password to login to the system.
 

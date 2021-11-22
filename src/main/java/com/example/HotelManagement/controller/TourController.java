@@ -100,17 +100,6 @@ public class TourController {
         return "redirect:/home";
     }
 
-
-
-
-
-
-    //Booking function
-//    @PostMapping("/my-tour/{id}")
-//    public String book(@PathVariable int id, @ModelAttribute("tour")Tour tour){
-//        tourService.updateTour(id, tour);
-//        return "redirect:/read-tour";
-//    }
 }
 
 
